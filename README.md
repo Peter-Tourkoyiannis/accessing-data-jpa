@@ -1,24 +1,3 @@
-**List Of HTTP Requests In MVC** - Host = http://localhost:8080
+Link to Github: https://github.com/Peter-Tourkoyiannis/accessing-data-jpa
 
-
-
-**Display All Address Books**
-
-&#x09;GET /addressbooklist HTTP/1.1
-
-
-
-**Create Address Book**
-
-&#x09;POST /addressbooklist HTTP/1.1
-
-
-
-**Add BuddyInfo to Address Book #**
-
-&#x09;POST /addressbooklist/#/buddies HTTP/1.1
-
-&#x09;	Note: # should be replaced with the specific Address Book ID.
-
-&#x09;Format: \&name="NAME-GOES-HERE"\&phoneNumber="XXXXXXXXXX"
-
+Link to Azure: uniquename-g9hreeheechkgmam.canadacentral-01.azurewebsites.net
