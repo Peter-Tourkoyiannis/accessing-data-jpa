@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Address Book Viewer</title>
+</head>
+<body>
+<h1 th:text="'Address Book ID - ' + ${addressBook.id}"></h1>
+<h2>Add Buddy</h2>
+<form th:action="@{/addressbooklist/{id}/buddies(id=${addressBook.id})}" method="post">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="text" name="phoneNumber" placeholder="Phone Number" required>
+    <button type="submit">Add Buddy</button>
+</form>
+<h2>Existing Buddies</h2>
+<ol>
+    <li th:each="buddy : ${addressBook.buddies}">
+        <span th:text="${buddy.name}"></span>
+        -
+        <span th:text="${buddy.phoneNumber}"></span>
+        <form th:action="@{/addressbooklist/{id}/buddies/{buddyId}/delete(id=${addressBook.id}, buddyId=${buddy.id})}" method="post" style="display:inline;">
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ol>
+<a th:href="@{/addressbooklist}">Back to Address Books</a>
+</body>
+</html>
