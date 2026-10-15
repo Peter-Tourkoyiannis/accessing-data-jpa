@@ -7,13 +7,15 @@
 # documentation.
 
 
+
 name: Java Maven CI
 
 on:
   push:
-    branches: [master]
+    branches: [main, master]
   pull_request:
-    branches: [master]
+    branches: [main, master]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -31,8 +33,9 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '21'
-          cache: 'maven'
 
       - name: Build and run JUnit tests
+        working-directory: ./accessing-data-jpa
         run: mvn -B clean verify
+
 
